@@ -12,7 +12,7 @@ const app = express(); //create express application (you can have multiple but i
 //res.send({hi: 'there'}); -> Immediately send some JSON back to whoever made this request
 
 app.get('/', (req, res) => {
-	res.send({hi: 'there'});
+	res.send({bye: 'buddy'});
 });
 
 //environmental variable from Heroku or my own port
