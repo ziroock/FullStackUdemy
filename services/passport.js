@@ -35,7 +35,8 @@ passport.use(
 	new GoolgleStrategy({
 		clientID: keys.googleClientID,
 		clientSecret: keys.googleClientSecret,
-		callbackURL: '/auth/google/callback'
+		callbackURL: '/auth/google/callback',
+		proxy: true
 	}, 
 	//callback function called by the google startegy
 	(accessToken, refreshToken, profile, done) => {
@@ -68,7 +69,7 @@ passport.use(
 		clientID: keys.facebookClientID,
 		clientSecret: keys.facebookClientSecret,
 		callbackURL: '/auth/facebook/callback',
-		profileFields: ['email']
+		proxy: true
 	},
 
 	//callback function called by the google startegy
