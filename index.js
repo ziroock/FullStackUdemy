@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
-require('./models/User');//where we define models calss (allways load bofer passport)
+require('./models/User');//where we define models class (always load before passport)
 require('./services/passport');//get passport
 
 mongoose.connect(keys.mongoURI);
@@ -12,7 +12,7 @@ const app = express(); //create express application (you can have multiple but i
 //same as const authRoutes = require('./...');
 //		  authRoutes(app);
 //so it basically imports the file and runs the exported function with app as a parameter
-//require('./...') returns the function and (app) sends the parrameter app
+//require('./...') returns the function and (app) sends the parameter app
 
 
 //Tell express that it needs to use cookies in our application
@@ -20,7 +20,7 @@ app.use(
 	cookieSession({
 		//how long can the cookie exist before it expires 30 days in our case
 		maxAge: 30 * 24 * 60 * 60 * 1000,
-		// it suyrves to encrypted
+		// it serves to encrypted
 		keys: [keys.cookieKey] 
 	})
 );
