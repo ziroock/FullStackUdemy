@@ -8,4 +8,6 @@ module.exports = {
 	cookieKey: 'vausdogvbjhfbvrwejhgtquyfqpqhfvmnbvcmnbvdcjahsdxfgjwefkw',
 	facebookClientID: '2568272993452373',
 	facebookClientSecret: '1c32006d558a6103fc5b4d9088f99e3d',
+	stripePublishableKey: 'pk_test_S5KDsPacyo4bPBnf8WLQdESd00MUiDgQwv',
+	stripeSecretKey: 'sk_test_Zqj7F1ls2s6mu5aZXg4EBKGv00AKKR8ebX',
 };

@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');//where we define models class (always load before passport)
 require('./services/passport');//get passport
@@ -14,7 +15,7 @@ const app = express(); //create express application (you can have multiple but i
 //so it basically imports the file and runs the exported function with app as a parameter
 //require('./...') returns the function and (app) sends the parameter app
 
-
+app.use(bodyParser.json());
 //Tell express that it needs to use cookies in our application
 app.use(
 	cookieSession({
@@ -31,6 +32,7 @@ app.use(passport.session());
 
 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 //environmental variable from Heroku or my own port
 const PORT = process.env.PORT || 5000;

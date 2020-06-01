@@ -41,9 +41,9 @@ passport.use(
 		},
 	//callback function called by the google strategy
 		async (accessToken, refreshToken, profile, done) => {
-			console.log('access token:', accessToken);
-			console.log('refresh token:', refreshToken);
-			console.log('profile:', profile);
+			// console.log('access token:', accessToken);
+			// console.log('refresh token:', refreshToken);
+			// console.log('profile:', profile);
 			//promise is the way javascript deals with asynchronous programming
 			//find the first time this profile was recorded to avoid duplicates in DB
 			const existingUser = await User.findOne({googleID: profile.id});
