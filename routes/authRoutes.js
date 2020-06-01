@@ -12,15 +12,18 @@ module.exports = app => {
 	);
 	
 	//4.Put user on hold, take the'code' from the URL
-	app.get('/auth/google/callback', 
-		passport.authenticate('google')
+	app.get('/auth/google/callback',
+		passport.authenticate('google'),
+		(req, res) => {
+			res.redirect('/surveys');
+		}
 	);
 
 	//routine for current user to logout
 	app.get('/api/logout', (req, res) => {
 		//attatched to the req object automatically by passport
 		req.logout();
-		res.send(req.user);
+		res.redirect('/');
 	});
 
 	//test to check if someone logged in and got access to user aka check for curr_usr
