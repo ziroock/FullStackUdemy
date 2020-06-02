@@ -26,6 +26,7 @@ app.use(
 	})
 );
 
+//merge successful ??
 //fully completes the authentication flow
 app.use(passport.initialize());
 app.use(passport.session());
