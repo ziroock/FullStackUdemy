@@ -11,6 +11,7 @@ module.exports = app => {
        res.send('Thanks for the review!');
     });
 
+    // TODO: Need to make sure that surveys can be sent only from api/surveys/new
     app.post('/api/surveys', requireLogin, requireCredits,  async (req, res) => {
         const { title, subject, body, recipients } = req.body;
 
