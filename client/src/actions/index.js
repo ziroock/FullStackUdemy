@@ -16,7 +16,9 @@ export const handleToken = (token) => {
 };
 
 //does the same as the above two, but contracted syntax
-export const submitSurvey = (values) => async dispatch => {
+export const submitSurvey = (values, history) => async dispatch => {
         const res = await axios.post('/api/surveys', values);
+
+        history.push('/surveys');
         dispatch({ type: FETCH_USER, payload: res.data });
 };
