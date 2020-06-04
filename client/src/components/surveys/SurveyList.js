@@ -7,10 +7,30 @@ class SurveyList extends Component {
         this.props.fetchSurveys();
     }
 
+    renderSurveys() {
+        return this.props.surveys.map(survey => {
+           return (
+               <div className="card blue-grey" key={survey._id}>
+                   <div className="card-content white-text">
+                       <span className="card-title">{survey.title}</span>
+                       <p>{survey.body}</p>
+                       <p className="right">
+                           Sent On: {new Date(survey.dateSent).toLocaleDateString()}
+                       </p>
+                   </div>
+                   <div className="card-action">
+                       <a>Yes: {survey.yes}</a>
+                       <a>NO: {survey.no}</a>
+                   </div>
+               </div>
+           );
+        });
+    }
+
     render() {
         return (
           <div>
-              SurveyList
+              {this.renderSurveys()}
           </div>
         );
     }
