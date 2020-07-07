@@ -1,5 +1,4 @@
 # MASS-SURVEY-EMAIL-SENDING  
-## APP BASED ON UDEMY COURSE
 
 ## Project Intent, Functionality & Learned How To
 ### Intent
