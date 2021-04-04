@@ -15,6 +15,7 @@ async function fetchAlbums() {
     console.log(json);
 }
 
+
 fetchAlbums();
 
 // const fetchAlbums = async() => {
