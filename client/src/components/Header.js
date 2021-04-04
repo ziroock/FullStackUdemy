@@ -48,7 +48,7 @@ class Header extends Component {
                     zIndex: '5'}}>
                     <div style={{textAlign: 'center'}}>NOTE</div>
                     To add credits use the
-                    following card number 4242 4242 4242 4242, any 3 digit CVC and an expiration
+                    following card number <b>4242 4242 4242 4242</b>, any 3 digit CVC and an expiration
                     date that is in the future from the day you are using the application.
                 </div>
             </React.Fragment>
